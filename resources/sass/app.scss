@@ -1,0 +1,42 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;800&display=swap');
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html{
+    @apply h-screen;
+}
+
+body{
+    font-family: "Montserrat";
+    @apply flex flex-col h-screen;
+}
+
+#app{
+    @apply flex-grow;
+}
+
+.menu-col{
+    @apply bg-white border-r border-gray-100 border-solid;
+}
+
+.preview-col{
+    background-image: radial-gradient(#ddd 20%,#fff 0);
+    background-position: 0 0;
+    background-size: 5px 5px;
+    z-index: -10;
+    @apply p-8;
+}
+
+.context-col{
+    //z-index: -5;
+    @apply shadow-lg p-8;
+}
+
+.el-form--label-top{
+    .el-form-item__label{
+        padding:0px !important;
+    }
+}
