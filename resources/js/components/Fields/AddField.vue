@@ -13,13 +13,16 @@
                     </el-form-item>
                 </div>
             </div>
-            <el-button size="small" type="primary" class="w-full">{{ $t('Add field') }}</el-button>
+            <el-button size="small" @click.prevent="addField" type="primary" class="w-full">{{ $t('Add field') }}</el-button>
         </el-form>
     </div>
 </template>
 
 <script>
+import EventBus from "../../eventBus";
+
 export default {
+    props:['section'],
     data(){
         return {
             field_id:"",
@@ -35,6 +38,17 @@ export default {
         }
     },
     methods:{
+        addField(){
+            EventBus.$emit('add-field', { id: this.field_name, form: this.form, section: this.section })
+            this.renewFormData()
+        },
+        renewFormData(){
+            this.form = {
+                label:"",
+                value:""
+            }
+            this.field_id = this.makeid(16)
+        },
         makeid(length) {
             let result = [];
             let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

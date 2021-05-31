@@ -3567,6 +3567,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _eventBus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../eventBus */ "./resources/js/eventBus.js");
 //
 //
 //
@@ -3587,7 +3588,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['section'],
   data: function data() {
     return {
       field_id: "",
@@ -3603,6 +3606,21 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    addField: function addField() {
+      _eventBus__WEBPACK_IMPORTED_MODULE_0__.default.$emit('add-field', {
+        id: this.field_name,
+        form: this.form,
+        section: this.section
+      });
+      this.renewFormData();
+    },
+    renewFormData: function renewFormData() {
+      this.form = {
+        label: "",
+        value: ""
+      };
+      this.field_id = this.makeid(16);
+    },
     makeid: function makeid(length) {
       var result = [];
       var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -3861,6 +3879,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             _this.fields.splice(key, 1);
           }
         });
+      }
+    });
+    _eventBus__WEBPACK_IMPORTED_MODULE_2__.default.$on('add-field', function (payload) {
+      if (payload.section && payload.section == "personal_info") {
+        _this.fields.push({
+          "name": payload.id,
+          "label": payload.form.label,
+          "placeholder": "",
+          "removable": true,
+          "type": "text"
+        });
+
+        _this.formData[_this.section_name][payload.id] = payload.form.value;
       }
     });
   }
@@ -102686,7 +102717,13 @@ var render = function() {
             "el-button",
             {
               staticClass: "w-full",
-              attrs: { size: "small", type: "primary" }
+              attrs: { size: "small", type: "primary" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.addField($event)
+                }
+              }
             },
             [_vm._v(_vm._s(_vm.$t("Add field")))]
           )
@@ -102881,7 +102918,7 @@ var render = function() {
             })
           }),
           _vm._v(" "),
-          _c("AddField"),
+          _c("AddField", { attrs: { section: "personal_info" } }),
           _vm._v(" "),
           _c(
             "el-button",

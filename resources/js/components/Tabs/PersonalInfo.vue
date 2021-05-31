@@ -11,7 +11,7 @@
                 :removable="value.removable"
             ></TextField>
 
-            <AddField></AddField>
+            <AddField section="personal_info"></AddField>
 
             <el-button @click.prevent="submit">Submit</el-button>
         </el-form>
@@ -56,6 +56,18 @@ export default {
                         this.fields.splice(key, 1)
                     }
                 })
+            }
+        })
+        EventBus.$on('add-field', payload => {
+            if (payload.section && payload.section == "personal_info") {
+                this.fields.push({
+                    "name": payload.id,
+                    "label": payload.form.label,
+                    "placeholder":"",
+                    "removable": true,
+                    "type": "text"
+                })
+                this.formData[this.section_name][payload.id] = payload.form.value
             }
         })
     }
