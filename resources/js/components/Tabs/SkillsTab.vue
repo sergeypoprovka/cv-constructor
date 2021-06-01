@@ -11,7 +11,8 @@
                 :removable="value.removable"
                 :type="value.type"
             ></Field>
-            <AddField section="objective"></AddField>
+
+            <AddField :section="section_name"></AddField>
         </el-form>
     </div>
 </template>
@@ -19,27 +20,25 @@
 <script>
 import AddField from "../Fields/AddField";
 import Field from "../Fields/Field";
-import Bullets from "../Fields/Bullets";
+import {mapState} from "vuex";
 import EventBus from "../../eventBus";
-import { mapState } from "vuex";
 
 export default {
-    components: { AddField, Field, Bullets },
     data(){
         return {
-            section_name:"objective",
+            section_name:"skills",
             fields:[
-                {"name": "objective","label":"Objective","placeholder":"Please describe your objective", "removable": false, "type": "textarea"},
-                {"name": "bullets","label":"Bullets","placeholder":"Please describe your objective", "removable": false, "type": "bullets"},
+                {"name": "skills","label":"Skills","placeholder":"", "removable": false, "type": "skills"},
             ]
         }
     },
+    components: { AddField, Field },
     computed:{
         ...mapState([
             'formData'
         ])
     },
-    mounted() {
+    mounted(){
         EventBus.$on('remove-field', payload => {
             if(payload.section && payload.section == this.section_name){
                 this.fields.forEach( (value, key) => {

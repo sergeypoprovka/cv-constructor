@@ -8,10 +8,14 @@ const store = new Vuex.Store({
         currentTab: 'personal_info',
         formData:{
             personal_info:{},
-            objective:{},
+            objective:{
+                bullets:["","",""]
+            },
             experience:{},
             education:{},
-            skills:{}
+            skills:{
+                skills:[]
+            }
         }
     },
     mutations: {

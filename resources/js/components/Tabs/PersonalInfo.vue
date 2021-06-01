@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-form ref="form" label-position="top">
-            <TextField
+            <Field
                 v-for="(value, key) in fields"
                 :key="key"
                 :section="section_name"
@@ -9,17 +9,16 @@
                 :label="$t(value.label)"
                 :placeholder="$t(value.placeholder)"
                 :removable="value.removable"
-            ></TextField>
+                :type="value.type"
+            ></Field>
 
-            <AddField section="personal_info"></AddField>
-
-            <el-button @click.prevent="submit">Submit</el-button>
+            <AddField :section="section_name"></AddField>
         </el-form>
     </div>
 </template>
 
 <script>
-import TextField from '../Fields/TextField'
+import Field from '../Fields/Field'
 import { mapState } from 'vuex'
 import AddField from "../Fields/AddField";
 import EventBus from "../../eventBus";
@@ -37,12 +36,7 @@ export default {
             ]
         }
     },
-    components: { AddField, TextField },
-    methods:{
-        submit(){
-            console.log(this.$store.state)
-        }
-    },
+    components: { AddField, Field },
     computed:{
         ...mapState([
             'formData'
@@ -50,7 +44,7 @@ export default {
     },
     mounted(){
         EventBus.$on('remove-field', payload => {
-            if(payload.section && payload.section == "personal_info"){
+            if(payload.section && payload.section == this.section_name){
                 this.fields.forEach( (value, key) => {
                     if(value.name === payload.model){
                         this.fields.splice(key, 1)
@@ -59,7 +53,7 @@ export default {
             }
         })
         EventBus.$on('add-field', payload => {
-            if (payload.section && payload.section == "personal_info") {
+            if (payload.section && payload.section == this.section_name) {
                 this.fields.push({
                     "name": payload.id,
                     "label": payload.form.label,

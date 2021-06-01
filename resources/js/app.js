@@ -46,6 +46,9 @@ Vue.component('personal-info', require('./components/Tabs/PersonalInfo').default
 Vue.component('objectives', require('./components/Tabs/Objectives').default);
 Vue.component('experience', require('./components/Tabs/Experience').default);
 Vue.component('education', require('./components/Tabs/Education').default);
+Vue.component('generic', require('./components/Tabs/Generic').default);
+Vue.component('bullets', require('./components/Fields/Bullets').default);
+Vue.component('skills', require('./components/Fields/Skills').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -4,20 +4,20 @@
             <div class="col-span-2 menu-col">
                 <div class="h-full py-8">
                     <ul class="flex flex-col text-center">
-                        <li><a :class="{ 'bg-blue-500 text-white' : (currentTab == 'personal_info') }" @click.prevent="setActiveTab('personal_info')" class="flex py-4 px-8 hover:bg-blue-500 hover:text-white" href="#">{{ $t('Personal info') }}</a></li>
-                        <li><a :class="{ 'bg-blue-500 text-white' : (currentTab == 'objective') }" @click.prevent="setActiveTab('objective')" class="flex py-4 px-8 hover:bg-blue-500 hover:text-white" href="#">{{ $t('Objective') }}</a></li>
-                        <li><a :class="{ 'bg-blue-500 text-white' : (currentTab == 'experience') }" @click.prevent="setActiveTab('experience')" class="flex py-4 px-8 hover:bg-blue-500 hover:text-white" href="#">{{ $t('Experience') }}</a></li>
-                        <li><a :class="{ 'bg-blue-500 text-white' : (currentTab == 'education') }" @click.prevent="setActiveTab('education')" class="flex py-4 px-8 hover:bg-blue-500 hover:text-white" href="#">{{ $t('Education') }}</a></li>
-                        <li><a :class="{ 'bg-blue-500 text-white' : (currentTab == 'skills') }" @click.prevent="setActiveTab('skills')" class="flex py-4 px-8 hover:bg-blue-500 hover:text-white" href="#">Skills</a></li>
-                        <li><a :class="{ 'bg-blue-500 text-white' : (currentTab == 'interests') }" @click.prevent="setActiveTab('interests')" class="flex py-4 px-8 hover:bg-blue-500 hover:text-white" href="#">Interests</a></li>
+                        <li v-for="(tab, key) in tabs">
+                            <a
+                                :class="{ 'bg-blue-500 text-white' : (currentTab.slug == tab.slug) }"
+                                class="flex py-4 px-8 hover:bg-blue-500 hover:text-white tab-link"
+                                href="#"
+                                @click.prevent="setActiveTab(tab)">
+                                <i :class="tab.icon"></i> {{ tab.name }}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="col-span-4 context-col">
-                <personal-info v-if="currentTab == 'personal_info'"></personal-info>
-                <objectives v-if="currentTab == 'objective'"></objectives>
-                <experience v-if="currentTab == 'experience'"></experience>
-                <education v-if="currentTab == 'education'"></education>
+                <component :is="currentTab.component ? currentTab.component : 'Generic'"></component>
             </div>
         </div>
         <div class="preview-col">CV viewer</div>
@@ -26,19 +26,50 @@
 
 <script>
     import { mapState } from 'vuex';
+    import PersonalInfo from "./Tabs/PersonalInfo";
+    import Objectives from "./Tabs/Objectives";
+    import Experience from "./Tabs/Experience";
+    import Education from "./Tabs/Education";
+    import Generic from './Tabs/Generic';
+    import SkillsTab from "./Tabs/SkillsTab";
+
     export default {
+        components:{ Generic },
         data(){
             return {
-
+                tabs:[
+                    {'name': this.$t('Personal info'), 'slug': 'personal_info', 'icon': 'el-icon-user', component: PersonalInfo},
+                    {'name': this.$t('Objective'), 'slug': 'objective', 'icon': 'el-icon-aim', component: Objectives},
+                    {'name': this.$t('Skills'), 'slug': 'skills', 'icon': 'el-icon-medal', component: SkillsTab},
+                    {'name': this.$t('Experience'), 'slug': 'experience', 'icon': 'el-icon-pie-chart', component: Experience},
+                    {'name': this.$t('Education'), 'slug': 'education', 'icon': 'el-icon-reading', component: Education},
+                    {'name': this.$t('Additional education'), 'slug': 'additional_education', 'icon': 'el-icon-notebook-1'},
+                    {'name': this.$t('Languages'), 'slug': 'languages', 'icon': 'el-icon-lollipop'},
+                    {'name': this.$t('Hobbies'), 'slug': 'hobbies', 'icon': 'el-icon-umbrella'}
+                ]
             }
         },
         methods:{
-            setActiveTab(slug){
-                this.$store.commit('SET_ACTIVE_TAB', slug)
+            setActiveTab(tab){
+                this.$store.commit('SET_ACTIVE_TAB', tab)
             }
         },
         computed: mapState([
             'currentTab'
-        ])
+        ]),
+        mounted(){
+            this.setActiveTab(this.tabs[0])
+        }
     }
 </script>
+
+<style scoped lang="scss">
+    .tab{
+        &-link{
+            @apply flex justify-start items-center text-left text-sm;
+            i{
+                @apply mr-2;
+            }
+        }
+    }
+</style>
