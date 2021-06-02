@@ -14,6 +14,9 @@
         <div v-if="type == 'skills'">
             <skills :section="section" :model="model"></skills>
         </div>
+        <div v-if="type == 'experience'">
+            <exp-items :section="section" :model="model"></exp-items>
+        </div>
     </div>
 </template>
 

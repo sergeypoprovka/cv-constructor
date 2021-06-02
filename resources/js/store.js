@@ -11,7 +11,9 @@ const store = new Vuex.Store({
             objective:{
                 bullets:["","",""]
             },
-            experience:{},
+            experience:{
+                experience:[]
+            },
             education:{},
             skills:{
                 skills:[]

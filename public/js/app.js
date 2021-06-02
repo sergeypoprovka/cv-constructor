@@ -3777,6 +3777,162 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['section', 'model'],
+  data: function data() {
+    return {
+      types: {
+        "work": 'Work experience',
+        "volunteering": 'Volunteering experience',
+        "internship": 'Internship'
+      },
+      experience: {
+        type: "work",
+        company_name: "",
+        job_title: "",
+        start: "",
+        end: "",
+        description: ""
+      }
+    };
+  },
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapState)(['formData'])),
+  methods: {
+    removeExperience: function removeExperience(key) {
+      this.formData[this.section][this.model].splice(key, 1);
+    },
+    addExperience: function addExperience() {
+      this.formData[this.section][this.model].push(this.experience);
+      this.experience = {
+        type: "work",
+        company_name: "",
+        job_title: "",
+        start: "",
+        end: "",
+        description: ""
+      };
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/Field.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/Field.vue?vue&type=script&lang=js& ***!
@@ -3796,6 +3952,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
 //
 //
 //
@@ -3951,11 +4110,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _Fields_AddField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Fields/AddField */ "./resources/js/components/Fields/AddField.vue");
+/* harmony import */ var _Fields_Field__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Fields/Field */ "./resources/js/components/Fields/Field.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _eventBus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../eventBus */ "./resources/js/eventBus.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      section_name: "experience",
+      fields: [{
+        "name": "experience",
+        "label": "experience",
+        "placeholder": "",
+        "removable": false,
+        "type": "experience"
+      }]
+    };
+  },
+  components: {
+    AddField: _Fields_AddField__WEBPACK_IMPORTED_MODULE_0__.default,
+    Field: _Fields_Field__WEBPACK_IMPORTED_MODULE_1__.default
+  },
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_3__.mapState)(['formData'])),
+  mounted: function mounted() {
+    var _this = this;
+
+    _eventBus__WEBPACK_IMPORTED_MODULE_2__.default.$on('remove-field', function (payload) {
+      if (payload.section && payload.section == _this.section_name) {
+        _this.fields.forEach(function (value, key) {
+          if (value.name === payload.model) {
+            _this.fields.splice(key, 1);
+          }
+        });
+      }
+    });
+    _eventBus__WEBPACK_IMPORTED_MODULE_2__.default.$on('add-field', function (payload) {
+      if (payload.section && payload.section == _this.section_name) {
+        _this.fields.push({
+          "name": payload.id,
+          "label": payload.form.label,
+          "placeholder": "",
+          "removable": true,
+          "type": "text"
+        });
+
+        _this.formData[_this.section_name][payload.id] = payload.form.value;
+      }
+    });
+  }
+});
 
 /***/ }),
 
@@ -4363,6 +4595,7 @@ Vue.component('education', __webpack_require__(/*! ./components/Tabs/Education *
 Vue.component('generic', __webpack_require__(/*! ./components/Tabs/Generic */ "./resources/js/components/Tabs/Generic.vue").default);
 Vue.component('bullets', __webpack_require__(/*! ./components/Fields/Bullets */ "./resources/js/components/Fields/Bullets.vue").default);
 Vue.component('skills', __webpack_require__(/*! ./components/Fields/Skills */ "./resources/js/components/Fields/Skills.vue").default);
+Vue.component('exp-items', __webpack_require__(/*! ./components/Fields/ExperienceItem */ "./resources/js/components/Fields/ExperienceItem.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -4463,7 +4696,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__.default.Store({
       objective: {
         bullets: ["", "", ""]
       },
-      experience: {},
+      experience: {
+        experience: []
+      },
       education: {},
       skills: {
         skills: []
@@ -10763,6 +10998,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".el-form-item[data-v-524e9be6]{\n  margin-bottom:0.3em;\n}\n.el-button[data-v-524e9be6]{\n  margin-bottom:1em;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".el-form-item[data-v-03e586f8]{\n  margin-bottom:0.3em;\n}\n.el-button[data-v-03e586f8]{\n  margin-bottom:1em;\n}\n.el-date-editor[data-v-03e586f8], .el-select[data-v-03e586f8]{\n  width:100%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -102502,6 +102761,47 @@ component.options.__file = "resources/js/components/Fields/Bullets.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Fields/ExperienceItem.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Fields/ExperienceItem.vue ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ExperienceItem_vue_vue_type_template_id_03e586f8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExperienceItem.vue?vue&type=template&id=03e586f8&scoped=true& */ "./resources/js/components/Fields/ExperienceItem.vue?vue&type=template&id=03e586f8&scoped=true&");
+/* harmony import */ var _ExperienceItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExperienceItem.vue?vue&type=script&lang=js& */ "./resources/js/components/Fields/ExperienceItem.vue?vue&type=script&lang=js&");
+/* harmony import */ var _ExperienceItem_vue_vue_type_style_index_0_id_03e586f8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css& */ "./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
+  _ExperienceItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _ExperienceItem_vue_vue_type_template_id_03e586f8_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ExperienceItem_vue_vue_type_template_id_03e586f8_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "03e586f8",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Fields/ExperienceItem.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Fields/Field.vue":
 /*!**************************************************!*\
   !*** ./resources/js/components/Fields/Field.vue ***!
@@ -102864,6 +103164,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Fields/ExperienceItem.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/Fields/ExperienceItem.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ExperienceItem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Fields/Field.vue?vue&type=script&lang=js&":
 /*!***************************************************************************!*\
   !*** ./resources/js/components/Fields/Field.vue?vue&type=script&lang=js& ***!
@@ -103039,6 +103355,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Bullets_vue_vue_type_template_id_524e9be6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Bullets_vue_vue_type_template_id_524e9be6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Bullets.vue?vue&type=template&id=524e9be6&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/Bullets.vue?vue&type=template&id=524e9be6&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Fields/ExperienceItem.vue?vue&type=template&id=03e586f8&scoped=true&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/Fields/ExperienceItem.vue?vue&type=template&id=03e586f8&scoped=true& ***!
+  \******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_template_id_03e586f8_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_template_id_03e586f8_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_template_id_03e586f8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ExperienceItem.vue?vue&type=template&id=03e586f8&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=template&id=03e586f8&scoped=true&");
 
 
 /***/ }),
@@ -103225,6 +103558,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Bullets_vue_vue_type_style_index_0_id_524e9be6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Bullets_vue_vue_type_style_index_0_id_524e9be6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
 /* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Bullets_vue_vue_type_style_index_0_id_524e9be6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Bullets_vue_vue_type_style_index_0_id_524e9be6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css&":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css& ***!
+  \********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_style_index_0_id_03e586f8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-style-loader/index.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_style_index_0_id_03e586f8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_style_index_0_id_03e586f8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_style_index_0_id_03e586f8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ExperienceItem_vue_vue_type_style_index_0_id_03e586f8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
 
 
@@ -103539,6 +103889,457 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=template&id=03e586f8&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=template&id=03e586f8&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm._l(_vm.formData[_vm.section][_vm.model], function(experience, key) {
+        return _c(
+          "div",
+          {
+            key: key,
+            staticClass: "relative py-2 px-4 shadow-md rounded mb-2"
+          },
+          [
+            _c("div", { staticClass: "grid grid-cols-2 gap-4" }, [
+              _c(
+                "div",
+                { staticClass: "col-span-2" },
+                [
+                  _c(
+                    "el-form-item",
+                    [
+                      _c(
+                        "el-select",
+                        {
+                          attrs: {
+                            size: "small",
+                            placeholder: _vm.$t("Select type")
+                          },
+                          model: {
+                            value:
+                              _vm.formData[_vm.section][_vm.model][key]["type"],
+                            callback: function($$v) {
+                              _vm.$set(
+                                _vm.formData[_vm.section][_vm.model][key],
+                                "type",
+                                $$v
+                              )
+                            },
+                            expression: "formData[section][model][key]['type']"
+                          }
+                        },
+                        _vm._l(_vm.types, function(item, key) {
+                          return _c("el-option", {
+                            key: key,
+                            attrs: { label: item, value: key }
+                          })
+                        }),
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                [
+                  _c(
+                    "el-form-item",
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          size: "small",
+                          placeholder: _vm.$t("Company name")
+                        },
+                        model: {
+                          value:
+                            _vm.formData[_vm.section][_vm.model][key][
+                              "company_name"
+                            ],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.formData[_vm.section][_vm.model][key],
+                              "company_name",
+                              $$v
+                            )
+                          },
+                          expression:
+                            "formData[section][model][key]['company_name']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                [
+                  _c(
+                    "el-form-item",
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          size: "small",
+                          placeholder: _vm.$t("Job title")
+                        },
+                        model: {
+                          value:
+                            _vm.formData[_vm.section][_vm.model][key][
+                              "job_title"
+                            ],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.formData[_vm.section][_vm.model][key],
+                              "job_title",
+                              $$v
+                            )
+                          },
+                          expression:
+                            "formData[section][model][key]['job_title']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-span-2" },
+                [
+                  _c(
+                    "el-form-item",
+                    [
+                      _c("el-date-picker", {
+                        attrs: {
+                          size: "small",
+                          type: "month",
+                          placeholder: _vm.$t("Start date")
+                        },
+                        model: {
+                          value:
+                            _vm.formData[_vm.section][_vm.model][key]["start"],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.formData[_vm.section][_vm.model][key],
+                              "start",
+                              $$v
+                            )
+                          },
+                          expression: "formData[section][model][key]['start']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-span-2" },
+                [
+                  _c(
+                    "el-form-item",
+                    [
+                      _c("el-date-picker", {
+                        attrs: {
+                          size: "small",
+                          type: "month",
+                          placeholder: _vm.$t("End date")
+                        },
+                        model: {
+                          value:
+                            _vm.formData[_vm.section][_vm.model][key]["end"],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.formData[_vm.section][_vm.model][key],
+                              "end",
+                              $$v
+                            )
+                          },
+                          expression: "formData[section][model][key]['end']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-span-2" },
+                [
+                  _c(
+                    "el-form-item",
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          size: "small",
+                          type: "textarea",
+                          placeholder: _vm.$t("Description")
+                        },
+                        model: {
+                          value:
+                            _vm.formData[_vm.section][_vm.model][key][
+                              "description"
+                            ],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.formData[_vm.section][_vm.model][key],
+                              "description",
+                              $$v
+                            )
+                          },
+                          expression:
+                            "formData[section][model][key]['description']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ])
+          ]
+        )
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "relative py-2 px-4 shadow-md rounded mb-2" },
+        [
+          _c("div", { staticClass: "grid grid-cols-2 gap-4" }, [
+            _c(
+              "div",
+              { staticClass: "col-span-2" },
+              [
+                _c(
+                  "el-form-item",
+                  [
+                    _c(
+                      "el-select",
+                      {
+                        attrs: {
+                          size: "small",
+                          placeholder: _vm.$t("Select type")
+                        },
+                        model: {
+                          value: _vm.experience.type,
+                          callback: function($$v) {
+                            _vm.$set(_vm.experience, "type", $$v)
+                          },
+                          expression: "experience.type"
+                        }
+                      },
+                      _vm._l(_vm.types, function(item, key) {
+                        return _c("el-option", {
+                          key: key,
+                          attrs: { label: item, value: key }
+                        })
+                      }),
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              [
+                _c(
+                  "el-form-item",
+                  [
+                    _c("el-input", {
+                      attrs: {
+                        size: "small",
+                        placeholder: _vm.$t("Company name")
+                      },
+                      model: {
+                        value: _vm.experience.company_name,
+                        callback: function($$v) {
+                          _vm.$set(_vm.experience, "company_name", $$v)
+                        },
+                        expression: "experience.company_name"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              [
+                _c(
+                  "el-form-item",
+                  [
+                    _c("el-input", {
+                      attrs: {
+                        size: "small",
+                        placeholder: _vm.$t("Job title")
+                      },
+                      model: {
+                        value: _vm.experience.job_title,
+                        callback: function($$v) {
+                          _vm.$set(_vm.experience, "job_title", $$v)
+                        },
+                        expression: "experience.job_title"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-span-2" },
+              [
+                _c(
+                  "el-form-item",
+                  [
+                    _c("el-date-picker", {
+                      attrs: {
+                        size: "small",
+                        type: "month",
+                        placeholder: _vm.$t("Start date")
+                      },
+                      model: {
+                        value: _vm.experience.start,
+                        callback: function($$v) {
+                          _vm.$set(_vm.experience, "start", $$v)
+                        },
+                        expression: "experience.start"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-span-2" },
+              [
+                _c(
+                  "el-form-item",
+                  [
+                    _c("el-date-picker", {
+                      attrs: {
+                        size: "small",
+                        type: "month",
+                        placeholder: _vm.$t("End date")
+                      },
+                      model: {
+                        value: _vm.experience.end,
+                        callback: function($$v) {
+                          _vm.$set(_vm.experience, "end", $$v)
+                        },
+                        expression: "experience.end"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-span-2" },
+              [
+                _c(
+                  "el-form-item",
+                  [
+                    _c("el-input", {
+                      attrs: {
+                        size: "small",
+                        type: "textarea",
+                        placeholder: _vm.$t("Description")
+                      },
+                      model: {
+                        value: _vm.experience.description,
+                        callback: function($$v) {
+                          _vm.$set(_vm.experience, "description", $$v)
+                        },
+                        expression: "experience.description"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "el-button",
+            {
+              staticClass: "w-full",
+              attrs: { size: "small", type: "primary" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.addExperience($event)
+                }
+              }
+            },
+            [_vm._v(_vm._s(_vm.$t("Add experience")))]
+          )
+        ],
+        1
+      )
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/Field.vue?vue&type=template&id=622817ef&scoped=true&":
 /*!************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/Field.vue?vue&type=template&id=622817ef&scoped=true& ***!
@@ -103615,6 +104416,18 @@ var render = function() {
       ? _c(
           "div",
           [_c("skills", { attrs: { section: _vm.section, model: _vm.model } })],
+          1
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.type == "experience"
+      ? _c(
+          "div",
+          [
+            _c("exp-items", {
+              attrs: { section: _vm.section, model: _vm.model }
+            })
+          ],
           1
         )
       : _vm._e()
@@ -103853,7 +104666,34 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Experience")])
+  return _c(
+    "div",
+    [
+      _c(
+        "el-form",
+        { ref: "form", attrs: { "label-position": "top" } },
+        [
+          _vm._l(_vm.fields, function(value, key) {
+            return _c("Field", {
+              key: key,
+              attrs: {
+                section: _vm.section_name,
+                model: value.name,
+                label: _vm.$t(value.label),
+                placeholder: _vm.$t(value.placeholder),
+                removable: value.removable,
+                type: value.type
+              }
+            })
+          }),
+          _vm._v(" "),
+          _c("AddField", { attrs: { section: _vm.section_name } })
+        ],
+        2
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -104235,6 +105075,27 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! !../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
 var update = add("36907b4c", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Fields/ExperienceItem.vue?vue&type=style&index=0&id=03e586f8&scoped=true&lang=css&");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.id, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! !../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("28b462a5", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
