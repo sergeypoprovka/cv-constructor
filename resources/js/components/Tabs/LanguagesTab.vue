@@ -12,7 +12,7 @@
                 :type="value.type"
             ></Field>
 
-            <AddField :section="section_name"></AddField>
+<!--            <AddField :section="section_name"></AddField>-->
         </el-form>
     </div>
 </template>
@@ -26,9 +26,9 @@ import EventBus from "../../eventBus";
 export default {
     data(){
         return {
-            section_name:"education",
+            section_name:"language",
             fields:[
-                {"name": "education","label":"education","placeholder":"", "removable": false, "type": "education"},
+                {"name": "language","label":"Languages","placeholder":"", "removable": false, "type": "language"},
             ]
         }
     },

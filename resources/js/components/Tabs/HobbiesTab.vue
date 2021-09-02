@@ -11,8 +11,6 @@
                 :removable="value.removable"
                 :type="value.type"
             ></Field>
-
-            <AddField :section="section_name"></AddField>
         </el-form>
     </div>
 </template>
@@ -26,9 +24,9 @@ import EventBus from "../../eventBus";
 export default {
     data(){
         return {
-            section_name:"education",
+            section_name:"hobbies",
             fields:[
-                {"name": "education","label":"education","placeholder":"", "removable": false, "type": "education"},
+                {"name": "hobbies","label":"Hobbies","placeholder":"", "removable": false, "type": "hobbies"},
             ]
         }
     },

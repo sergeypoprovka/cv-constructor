@@ -17,10 +17,13 @@
                 </div>
             </div>
             <div class="col-span-4 context-col">
+            <!-- TODO: Check the error -->
                 <component :is="currentTab.component ? currentTab.component : 'Generic'"></component>
             </div>
         </div>
-        <div class="preview-col">CV viewer</div>
+        <div class="preview-col">
+            <cv-viewer></cv-viewer>
+        </div>
     </div>
 </template>
 
@@ -32,6 +35,9 @@
     import Education from "./Tabs/Education";
     import Generic from './Tabs/Generic';
     import SkillsTab from "./Tabs/SkillsTab";
+    import AdditionalEducation from "./Tabs/AdditionalEducation";
+    import LanguagesTab from "./Tabs/LanguagesTab";
+    import HobbiesTab from "./Tabs/HobbiesTab";
 
     export default {
         components:{ Generic },
@@ -43,9 +49,9 @@
                     {'name': this.$t('Skills'), 'slug': 'skills', 'icon': 'el-icon-medal', component: SkillsTab},
                     {'name': this.$t('Experience'), 'slug': 'experience', 'icon': 'el-icon-pie-chart', component: Experience},
                     {'name': this.$t('Education'), 'slug': 'education', 'icon': 'el-icon-reading', component: Education},
-                    {'name': this.$t('Additional education'), 'slug': 'additional_education', 'icon': 'el-icon-notebook-1'},
-                    {'name': this.$t('Languages'), 'slug': 'languages', 'icon': 'el-icon-lollipop'},
-                    {'name': this.$t('Hobbies'), 'slug': 'hobbies', 'icon': 'el-icon-umbrella'}
+                    {'name': this.$t('Additional education'), 'slug': 'additional_education', 'icon': 'el-icon-notebook-1', component: AdditionalEducation},
+                    {'name': this.$t('Languages'), 'slug': 'languages', 'icon': 'el-icon-lollipop', component: LanguagesTab},
+                    {'name': this.$t('Hobbies'), 'slug': 'hobbies', 'icon': 'el-icon-umbrella', component: HobbiesTab}
                 ]
             }
         },

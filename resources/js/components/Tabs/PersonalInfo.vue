@@ -44,7 +44,7 @@ export default {
     },
     mounted(){
         EventBus.$on('remove-field', payload => {
-            if(payload.section && payload.section == this.section_name){
+            if(payload.section && payload.section === this.section_name){
                 this.fields.forEach( (value, key) => {
                     if(value.name === payload.model){
                         this.fields.splice(key, 1)
@@ -53,7 +53,7 @@ export default {
             }
         })
         EventBus.$on('add-field', payload => {
-            if (payload.section && payload.section == this.section_name) {
+            if (payload.section && payload.section === this.section_name) {
                 this.fields.push({
                     "name": payload.id,
                     "label": payload.form.label,

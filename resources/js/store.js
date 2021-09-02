@@ -1,9 +1,17 @@
 import Vue from 'vue'
 import Vuex from "vuex";
+import VuexPersistence from 'vuex-persist'
 
 Vue.use(Vuex)
 
+
+const vuexLocal = new VuexPersistence({
+    key: "cv",
+    storage: window.localStorage
+})
+
 const store = new Vuex.Store({
+    plugins:[vuexLocal.plugin],
     state: {
         currentTab: 'personal_info',
         formData:{
@@ -14,9 +22,20 @@ const store = new Vuex.Store({
             experience:{
                 experience:[]
             },
-            education:{},
+            education:{
+                education:[]
+            },
+            additional_education:{
+                additional_education:[]
+            },
             skills:{
                 skills:[]
+            },
+            language:{
+                language:[]
+            },
+            hobbies:{
+                hobbies:[]
             }
         }
     },
@@ -30,7 +49,7 @@ const store = new Vuex.Store({
     },
     actions:{
 
-    }
+    },
 })
 
 export default store

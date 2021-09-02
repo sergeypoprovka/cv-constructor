@@ -17,6 +17,18 @@
         <div v-if="type == 'experience'">
             <exp-items :section="section" :model="model"></exp-items>
         </div>
+        <div v-if="type == 'education'">
+            <edu-items :section="section" :model="model"></edu-items>
+        </div>
+        <div v-if="type == 'additional_education'">
+            <add-edu-items :section="section" :model="model"></add-edu-items>
+        </div>
+        <div v-if="type == 'language'">
+            <languages :section="section" :model="model"></languages>
+        </div>
+        <div v-if="type == 'hobbies'">
+            <hobbies :section="section" :model="model"></hobbies>
+        </div>
     </div>
 </template>
 

@@ -32,6 +32,7 @@
         "mix-tailwindcss": "^1.3.0",
         "vue-i18n": "^8.24.4",
         "vue-router": "^3.5.1",
-        "vuex": "^3.6.2"
+        "vuex": "^3.6.2",
+        "vuex-persist": "^3.1.3"
     }
 }

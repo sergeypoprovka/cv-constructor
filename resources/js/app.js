@@ -10,9 +10,10 @@ window.Vue = require('vue').default;
 import VueI18n from 'vue-i18n'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/en'
 
 Vue.use(VueI18n)
-Vue.use(ElementUI)
+Vue.use(ElementUI, { locale })
 
 import store from './store'
 
@@ -49,7 +50,12 @@ Vue.component('education', require('./components/Tabs/Education').default);
 Vue.component('generic', require('./components/Tabs/Generic').default);
 Vue.component('bullets', require('./components/Fields/Bullets').default);
 Vue.component('skills', require('./components/Fields/Skills').default);
+Vue.component('languages', require('./components/Fields/Languages').default);
+Vue.component('hobbies', require('./components/Fields/Hobbies').default);
 Vue.component('exp-items', require('./components/Fields/ExperienceItem').default);
+Vue.component('edu-items', require('./components/Fields/EducationItem').default);
+Vue.component('add-edu-items', require('./components/Fields/AdditionalEducationItem').default);
+Vue.component('cv-viewer', require('./components/Viewer').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -26,9 +26,9 @@ import EventBus from "../../eventBus";
 export default {
     data(){
         return {
-            section_name:"education",
+            section_name:"additional_education",
             fields:[
-                {"name": "education","label":"education","placeholder":"", "removable": false, "type": "education"},
+                {"name": "additional_education","label":"additional_education","placeholder":"", "removable": false, "type": "additional_education"},
             ]
         }
     },
