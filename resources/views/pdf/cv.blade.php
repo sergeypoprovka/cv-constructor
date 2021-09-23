@@ -6,23 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
+
     <style>
+        @page {
+            margin: 0 !important;
+        }
+        @php
+            include(public_path().'/css/app.css');
+        @endphp
         h3{
             font-size: 2em;
             margin-bottom: 0.6em;
-        }
-        .sheet{
-            font-size: 10px;
-            width: 80%;
-            background: white;
         }
         h1{
             font-size: 3em;
         }
         .deco_bar{
-            background: pink;
+            background: rgb(244, 114, 182);
             height: 100%;
-            width: 0.25em;
+            width: 8px;
+            margin-right: 30px;
+            float: left;
         }
         #skills .el-rate__icon {
             font-size: 12px !important;
@@ -39,88 +46,137 @@
             <div class="flex-grow">
                 <div id="personal_info" class="p-4">
                     <h1 class="text-center">{{ $data['personal_info']['firstname'] }} {{ $data['personal_info']['lastname'] }}</h1>
-{{--                    <el-row>--}}
-{{--                        <el-col :span="8" class="text-left">{{ formData.personal_info.email }}</el-col>--}}
-{{--                        <el-col :span="8" class="text-center">{{ formData.personal_info.phone }}</el-col>--}}
-{{--                        <el-col :span="8" class="text-right">{{ formData.personal_info.portfolio }}</el-col>--}}
-{{--                    </el-row>--}}
+                    <el-row>
+                        @if(isset($data['personal_info']['email']))<el-col :span="8" class="text-left">{{ $data['personal_info']['email'] }}</el-col>@endif
+                        @if(isset($data['personal_info']['phone']))<el-col :span="8" class="text-center">{{ $data['personal_info']['phone'] }}</el-col>@endif
+                        @if(isset($data['personal_info']['portfolio'])) <el-col :span="8" class="text-right">{{ $data['personal_info']['portfolio'] }}</el-col> @endif
+                    </el-row>
                     <hr class="my-4" />
                 </div>
-{{--                <div id="objectives" class="px-4 mb-4">--}}
-{{--                    <h3>{{ $t('Target job summary') }}</h3>--}}
-{{--                    <p class="mb-2">{{ formData.objective.objective }}</p>--}}
-{{--                    <ul class="list-disc ml-4 flex flex-col" v-if="formData.objective.bullets && formData.objective.bullets.length">--}}
-{{--                        <li class="mr-4" v-for="bullet in formData.objective.bullets">--}}
-{{--                            {{ bullet }}--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div id="work_experience" class="px-4">--}}
-{{--                    <h3>{{ $t('Work experience') }}</h3>--}}
-{{--                    <ul v-if="formData.experience.experience && formData.experience.experience.length">--}}
-{{--                        <li class="mb-4" v-for="experience in formData.experience.experience">--}}
-{{--                            <p class="flex flex-row justify-between">--}}
-{{--                                <strong>{{ experience.job_title }}</strong>--}}
-{{--                                <strong>{{ datify(experience.start) }} - {{ datify(experience.end) }}</strong>--}}
-{{--                            </p>--}}
-{{--                            <p><strong>{{ experience.company_name }}</strong></p>--}}
-{{--                            <p>{{ experience.description }}</p>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div id="education" class="px-4">--}}
-{{--                    <h3>{{ $t('Education') }}</h3>--}}
-{{--                    <ul v-if="formData.education.education && formData.education.education.length">--}}
-{{--                        <li class="mb-4" v-for="education in formData.education.education">--}}
-{{--                            <p class="flex flex-row justify-between">--}}
-{{--                                <strong>{{ education.school_name }}</strong>--}}
-{{--                                <strong>{{ datify(education.start) }} - {{ datify(education.end) }}</strong>--}}
-{{--                            </p>--}}
-{{--                            <p><strong>{{ education.degree_course }}</strong></p>--}}
-{{--                            <p>{{ education.description }}</p>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div id="additional_education" class="px-4">--}}
-{{--                    <h3>{{ $t('Additional Education') }}</h3>--}}
-{{--                    <ul v-if="formData.additional_education.additional_education && formData.additional_education.additional_education.length">--}}
-{{--                        <li class="mb-4" v-for="additional_education in formData.additional_education.additional_education">--}}
-{{--                            <p class="flex flex-row justify-between">--}}
-{{--                                <strong>{{ additional_education.school_name }}</strong>--}}
-{{--                                <strong>{{ datify(additional_education.start) }} - {{ datify(additional_education.end) }}</strong>--}}
-{{--                            </p>--}}
-{{--                            <p><strong>{{ additional_education.degree_course }}</strong></p>--}}
-{{--                            <p>{{ additional_education.description }}</p>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div id="skills" class="px-4">--}}
-{{--                    <h3>{{ $t('Skills') }}</h3>--}}
-{{--                    <ul class="flex flex-row" v-if="formData.skills.skills && formData.skills.skills.length">--}}
-{{--                        <li class="mb-4 mr-4" v-for="skill in formData.skills.skills">--}}
-{{--                            <p>{{ skill.name }}</p>--}}
-{{--                            <el-rate disabled v-model="skill.rating" :allow-half="true"></el-rate>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div id="languages" class="px-4">--}}
-{{--                    <h3>{{ $t('Languages') }}</h3>--}}
-{{--                    <ul class="flex flex-row" v-if="formData.language.language && formData.language.language.length">--}}
-{{--                        <li class="mb-4 flex flex-row w-full justify-between" v-for="language in formData.language.language">--}}
-{{--                            <p>{{ language.name }}</p>--}}
-{{--                            <p>{{ language_levels[language.level] }}</p>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div id="hobbies" class="px-4">--}}
-{{--                    <h3>{{ $t('Hobbies') }}</h3>--}}
-{{--                    <ul class="flex flex-col" v-if="formData.hobbies.hobbies && formData.hobbies.hobbies.length">--}}
-{{--                        <li class="mb-4 flex flex-row w-full justify-between" v-for="hobby in formData.hobbies.hobbies">--}}
-{{--                            <p>{{ hobby.name }}</p>--}}
-{{--                            <p>{{ hobby.description }}</p>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
+                @if(isset($data['objective']) && count($data['objective']))
+                <div id="objectives" class="px-4 mb-4">
+                    <h3>{{ __('Target job summary') }}</h3>
+                    @if(isset($data['objective']['objective']))<p class="mb-2">{{ $data['objective']['objective'] }}</p>@endif
+                    @if(isset($data['objective']['bullets']) && count($data['objective']['bullets']))
+                    <ul class="list-disc ml-4">
+                        @foreach($data['objective']['bullets'] as $bullet)
+                            <li class="mr-4">
+                                {{ $bullet }}
+                            </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                @endif
+
+                @if(isset($data['experience']) && count($data['experience']))
+                <div id="work_experience" class="px-4">
+                    <h3>{{ __('Work experience') }}</h3>
+                    @if(isset($data['experience']['experience']) && count($data['experience']['experience']))
+                    <ul>
+                        @foreach($data['experience']['experience'] as $experience)
+                        <li class="mb-4">
+                            <p class="justify-between">
+                                <strong>{{ $experience['job_title'] }}</strong>
+                                <strong>{{ $experience['start'] }} - {{ $experience['end'] }}</strong>
+                            </p>
+                            <p><strong>{{ $experience['company_name'] }}</strong></p>
+                            <p>{{ $experience['description'] }}</p>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                @endif
+
+                @if(isset($data['education']) && count($data['education']))
+                <div id="education" class="px-4">
+                    <h3>{{ __('Education') }}</h3>
+                    @if(isset($data['education']['education']) && count($data['education']['education']))
+                    <ul>
+                        @foreach($data['education']['education'] as $education)
+                        <li class="mb-4">
+                            <p class="justify-between">
+                                <strong>{{ $education['school_name'] }}</strong>
+                                <strong>{{ $education['start'] }} - {{ $education['end'] }}</strong>
+                            </p>
+                            <p><strong>{{ $education['degree_course'] }}</strong></p>
+                            <p>{{ $education['description'] }}</p>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                @endif
+
+                @if(isset($data['additional_education']) && count($data['additional_education']))
+                <div id="additional_education" class="px-4">
+                    <h3>{{ __('Additional Education') }}</h3>
+                    @if(isset($data['additional_education']['additional_education']) && count($data['additional_education']['additional_education']))
+                    <ul>
+                        @foreach($data['additional_education']['additional_education'] as $additional_education)
+                        <li class="mb-4">
+                            <p class="justify-between">
+                                <strong>{{ $additional_education['school_name'] }}</strong>
+                                <strong>{{ $additional_education['start'] }} - {{ $additional_education['end'] }}</strong>
+                            </p>
+                            <p><strong>{{ $additional_education['degree_course'] }}</strong></p>
+                            <p>{{ $additional_education['description'] }}</p>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                @endif
+
+                @if(isset($data['skills']) && count($data['skills']))
+                <div id="skills" class="px-4">
+                    <h3>{{ __('Skills') }}</h3>
+                    @if(isset($data['skills']['skills']) && count($data['skills']['skills']))
+                    <ul>
+                        @foreach($data['skills']['skills'] as $skill)
+                        <li class="mb-4 mr-4">
+                            <p>{{ $skill['name'] }}</p>
+                            <el-rate disabled v-model="{{ $skill['rating'] }}" :allow-half="true"></el-rate>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                @endif
+
+                @if(isset($data['language']) && count($data['language']))
+                <div id="languages" class="px-4">
+                    <h3>{{ __('Languages') }}</h3>
+                    @if(isset($data['language']['language']) && count($data['language']['language']))
+                    <ul>
+                        @foreach($data['language']['language'] as $language)
+                        <li class="mb-4">
+                            <p>{{ $language['name'] }}</p>
+                            <p>{{ $language['level'] }}</p>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                @endif
+
+                @if(isset($data['hobbies']) && count($data['hobbies']))
+                <div id="hobbies" class="px-4">
+                    <h3>{{ __('Hobbies') }}</h3>
+                    @if(isset($data['hobbies']['hobbies']) && count($data['hobbies']['hobbies']))
+                    <ul>
+                        @foreach($data['hobbies']['hobbies'] as $hobby)
+                        <li class="mb-4 flex flex-row w-full justify-between">
+                            <p>{{ $hobby['name'] }}</p>
+                            <p>{{ $hobby['description'] }}</p>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                @endif
+
             </div>
         </div>
     </div>
