@@ -14,6 +14,15 @@
                             </a>
                         </li>
                     </ul>
+                    <hr class="my-8" />
+                    <ul class="flex flex-col text-center mt-8">
+                        <li>
+                            <el-button @click.prevent="resetData">Reset data</el-button>
+                        </li>
+                        <li class="py-4">
+                            <el-button type="primary" @click.prevent="downloadCV">Download CV</el-button>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="col-span-4 context-col">
@@ -58,6 +67,12 @@
         methods:{
             setActiveTab(tab){
                 this.$store.commit('SET_ACTIVE_TAB', tab)
+            },
+            resetData(){
+                console.log('RESET DATA in progress')
+            },
+            downloadCV(){
+                this.$store.commit('DOWNLOAD_CV');
             }
         },
         computed: mapState([

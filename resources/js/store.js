@@ -14,6 +14,14 @@ const store = new Vuex.Store({
     plugins:[vuexLocal.plugin],
     state: {
         currentTab: 'personal_info',
+        language_levels:{
+            beginner:"Beginner/Elementary",
+            pre_intermediate:"Pre intermediate",
+            intermediate:"Intermediate",
+            upper_intermediate:"Upper intermediate",
+            advanced:"Advanced",
+            proficient:"Proficient",
+        },
         formData:{
             personal_info:{},
             objective:{
@@ -42,6 +50,13 @@ const store = new Vuex.Store({
     mutations: {
         SET_ACTIVE_TAB(state, payload){
             state.currentTab = payload
+        },
+        DOWNLOAD_CV(state, payload){
+            axios.post('/api/download', this.state.formData).then( res => {
+
+            }).catch( err => {
+
+            })
         }
     },
     getters:{
